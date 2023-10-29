@@ -1,0 +1,28 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Angular
+/dist/
+/e2e/*.log
+/e2e/*.screenshot.png
+/.angular-cli.json
+/.vscode
+/*.js
+/*.js.map
+*.polyfills.js
+*.polyfills.js.map
+*.bundle.js
+*.bundle.js.map
+
+# TypeScript
+*.tsbuildinfo
+*.ts
+
+# IDE files
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
