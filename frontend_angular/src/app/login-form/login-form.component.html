@@ -1,0 +1,10 @@
+<div class="login_all">
+        <div class="login-container">
+            <h2>Leetcode</h2>
+            <form id="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <input type="text" id="username" name="email" formControlName="email"  required>
+                <input type="password" id="password" name="password" value="test" required > 
+                <button type="submit" class="submit-button" [disabled]="loginForm.invalid">Login</button>
+            </form>
+        </div>
+</div>

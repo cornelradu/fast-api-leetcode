@@ -1,0 +1,20 @@
+<div class="bar" *ngIf="isComponentVisible">
+    <div class="bar-child bar-child-1">
+        <button (click)="emitProblemListEvent()" class="custom-button-2"><i class="fas fa-flag-flip-horizontal"></i> Problem list</button>
+        <button (click)="emitEvent('previous')" class="custom-button"><i class="fas fa-chevron-left"></i>
+        </button>
+        <button (click)="emitEvent('next')" class="custom-button"> <i class="fas fa-chevron-right"></i>
+        </button>
+       
+    </div>
+
+    <div class="bar-child bar-child-2">
+        <div class="username_div">
+        <p>{{this.username}}</p>
+        </div>
+
+    </div>
+
+    
+
+</div>

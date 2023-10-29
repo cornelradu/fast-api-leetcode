@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="flex-container">
+        <div class="problem-text">
+            <p id="problem-name"> {{index+1}}. {{problems[index].name}}  </p>
+            <div [innerHtml]="htmlContent" class="textContent">
+            
+            </div>
+        </div>
+        <div class="right-container">
+            <div>
+                <button (click)="refreshProblemCode()">Refresh</button>
+                <div class="problem-editor">
+                    <code #codeElement contenteditable="true" [(innerHtml)]="textareaContent" (keydown)="onKeyDown($event)"  (keyup)="onKeyUp($event)" class="language-python" id="w3review" name="w3review" rows="30" cols="80">print("Hello world")</code>
+                </div>
+            </div>
+            <div class="test-container">
+                <div class="buttons1">
+                    <button (click)="toggleTestCase()" class="test-container-button" [class.test-container-button-clicked]="showTestCase">Tescase</button>
+                    <button (click)="toggleResult()"  class="test-container-button" [class.test-container-button-clicked]="!showTestCase">Results</button>
+                </div>
+                <div *ngIf="showTestCase" class="testcase">
+                    <div class="tests">
+                        <button *ngFor="let item of problems[index].tests; let i = index" (click)="handleTestCaseButtonClick(i)" [class.test-case-button]="i != this.crt_test_case_item" [class.test-case-button-clicked]="i == this.crt_test_case_item">Test {{i+1}}</button>
+                    </div>
+                    <div *ngFor="let item of this.crt_test_cases[crt_test_case_item]; let i = index; trackBy: trackByFn">
+                        <p>{{this.problems[this.index].inputs_names[i]}} = </p>
+                        <input type="text"  [(ngModel)]="this.crt_test_cases[crt_test_case_item][i]"/>
+                    </div>
+                </div>
+
+                <div *ngIf="!showTestCase && ran_once && !is_error" class="result2 ">
+                    <div *ngIf="goodAnswer" class="goodAnswer">  Accepted </div>
+                    <div *ngIf="!goodAnswer" class="wrongAnswer"> Wrong answer </div>
+                    <div class="results">
+                        <div *ngFor="let item of problems[index].tests; let i = index" class="results-child">
+                            <div [class.accepted]="accepted[i]" [class.not_accepted]="!accepted[i]" class="span"> </div>
+                            <button  (click)="handleTestResultButtonClick(i)" 
+                            class="result-case-button" [class.test-case-button-clicked]="i == crt_test_result_item">
+                            
+                            Test {{i+1}}
+                            </button>
+                         </div>
+                    </div>
+                    
+                    <p class="result" type="text" *ngFor="let item of this.crt_test_cases[crt_test_result_item]; let i = index" >{{this.problems[this.index].inputs_names[i]}} =  <br/>{{item}}</p> 
+                    <p>Output:</p>
+                    <div class="result" >{{this.outputs[crt_test_result_item]}}</div>
+                    <p>Expected output:</p>
+                    <div class="result">{{this.expected_outputs[this.crt_test_result_item]}}</div>
+                </div>
+
+                <div *ngIf="!showTestCase && ran_once && is_error" class="result-error-container">
+                    <h1 class="result-error-msg"> Runtime error</h1>
+                    <div class="error-test-result">
+                        {{error}}
+                    </div>
+                </div>
+                <div class="buttons">
+                    <p class="loading" *ngIf="loading">Loading</p>
+                    <button id='run_button' [disabled]="loading" (click)="handleClick()" >Run</button>
+                    <button id="submit_button" disabled>Submit</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+
+<div class="overlay" *ngIf="isProblemListVisible" (click)="toggleProblemsList()" ></div>
+    <div class='left-component'[@slideInOut]="isProblemListVisible ? 'in' : 'out'">
+        <!-- Your list content goes here -->
+        <table class="styled-table" (click)="onTableRowClick($event)">
+            <tr *ngFor="let item of this.problems; let i = index"  >
+              <td>{{i+1}}.{{item.name}}</td>
+            </tr>
+            
+          </table>
+    </div>
+
+
+
+    

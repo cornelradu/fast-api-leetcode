@@ -1,0 +1,394 @@
+
+
+.flex-container {
+    display: flex;
+    width: 100%;
+    background-color: transparent;
+    justify-content: space-around;
+    align-content: stretch;
+    height: 93vh;
+    margin-bottom: -50px;
+}
+
+.problem-text{
+    flex-basis: 50%;
+    background-color: white;
+    overflow-y: scroll;
+}
+
+.problem-editor{
+    
+    background-color: white;
+    border-radius: 3px;
+    margin-bottom: 12px;
+    flex: 1;
+}
+
+.container{
+    background-color: lightgray;  
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    padding: 10px;
+    border-radius:5px
+}
+
+.right-container{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.test-container{
+    flex: 1;
+    background-color: white;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+#run_button{
+    background-color: lightgray;
+}
+
+.buttons{
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
+    justify-content:flex-end;
+    position: relative;
+}
+
+.textContent{
+    padding: 30px;
+}
+
+.test-container-button{
+    border: none; /* Remove default button border */
+    padding: 15px 32px; /* Padding */
+    text-align: center; /* Text alignment */
+    text-decoration: none; /* Remove text decoration */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margin */
+    background-color: transparent;
+}
+
+/* Button style when hovered */
+.test-container-button:hover {
+    cursor:pointer;
+}
+
+
+
+  .test-container-button-clicked {
+    border-bottom: 2px solid black; /* Bottom border when clicked */
+  }
+
+
+.buttons1{
+    display: flex;
+}
+
+.test-case-button{
+    border: none; /* Remove default button border */
+    padding: 15px 32px; /* Padding */
+    text-align: center; /* Text alignment */
+    text-decoration: none; /* Remove text decoration */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margin */
+    background-color: transparent;
+}
+
+.test-case-button-clicked{
+    border: none; /* Remove default button border */
+    padding: 15px 32px; /* Padding */
+    text-align: center; /* Text alignment */
+    text-decoration: none; /* Remove text decoration */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margin */
+    border-radius: 5px;
+    background-color: #d2d6d9;
+}
+
+.test-case-button:hover{
+    border: none; /* Remove default button border */
+    padding: 15px 32px; /* Padding */
+    text-align: center; /* Text alignment */
+    text-decoration: none; /* Remove text decoration */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margin */
+    border-radius: 5px;
+    background-color: #d2d6d9;
+}
+
+/* Apply styles to all input elements */
+input {
+    padding: 10px; /* Padding inside the input */
+    font-size: 16px; /* Font size */
+    border: 2px solid #ccc; /* Border color and width */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle 3D effect */
+    outline: none; /* Remove the default focus outline */
+    width: 95%;
+  }
+  
+  /* Apply styles when input is hovered */
+  input:hover {
+    border-color: #555; /* Border color on hover */
+  }
+  
+  /* Apply styles when input is focused */
+  input:focus {
+    border-color: #007bff; /* Border color when focused */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Box shadow when focused */
+  }
+
+  p.result{
+    padding: 10px; /* Padding inside the input */
+    font-size: 16px; /* Font size */
+    border: 2px solid #ccc; /* Border color and width */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle 3D effect */
+    outline: none; /* Remove the default focus outline */
+    width: 95%;
+  }
+
+  div.result{
+    padding: 10px; /* Padding inside the input */
+    font-size: 16px; /* Font size */
+    border: 2px solid #ccc; /* Border color and width */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle 3D effect */
+    outline: none; /* Remove the default focus outline */
+    width: 95%;
+  }
+
+  div.result2{
+    overflow-y: auto; 
+
+  }
+
+  div.testcase{
+    overflow-y: auto; 
+  }
+
+  .loading{
+    left:10px;
+    top:-10px;
+    position: absolute;
+    color: darkgoldenrod;
+  }
+
+  #run_button{
+    align-self: flex-end;
+    border: none; /* Remove default button border */
+    padding: 15px 32px; /* Padding */
+    text-align: center; /* Text alignment */
+    text-decoration: none; /* Remove text decoration */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margin */
+    background-color: lightgray;
+    border-radius:15px;
+  }
+
+
+  #run_button:hover{
+    align-self: flex-end;
+    border: none; /* Remove default button border */
+    padding: 15px 32px; /* Padding */
+    text-align: center; /* Text alignment */
+    text-decoration: none; /* Remove text decoration */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margin */
+    background-color: whitesmoke;
+    
+  }
+
+
+
+#submit_button{
+    align-self: flex-end;
+    border: none; /* Remove default button border */
+    padding: 15px 32px; /* Padding */
+    text-align: center; /* Text alignment */
+    text-decoration: none; /* Remove text decoration */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margin */
+    background-color: green;
+    color:black;
+    border-radius:15px;
+    
+  }
+
+  #submit_button::hover{
+    align-self: flex-end;
+    border: none; /* Remove default button border */
+    padding: 15px 32px; /* Padding */
+    text-align: center; /* Text alignment */
+    text-decoration: none; /* Remove text decoration */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margin */
+    background-color: lightgreen;
+    
+    
+  }
+
+.error-test-result{
+    color:red;
+    background-color: #FFCCCB;
+    /*height: 200px;*/
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+.result-error-container{
+    color:red;
+}
+
+.result-error-msg{
+    color:red;
+}
+
+.accepted{
+    background-color: green;
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+}
+
+.not_accepted{
+    background-color: red;
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+}
+
+
+.results-child{
+    display: flex;
+    justify-self: center;
+    flex-flow: row;
+    position: relative;
+}
+
+.results{
+    display: flex;
+}
+
+
+.result-case-button{
+    border: none; /* Remove default button border */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margin */
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 15px 32px; /* Padding */
+    text-align: center; /* Text alignment */
+    text-decoration: none; /* Remove text decoration */
+
+}
+
+.result-case-button:hover{
+    border: none; /* Remove default button border */
+    padding: 15px 32px; /* Padding */
+    text-align: center; /* Text alignment */
+    text-decoration: none; /* Remove text decoration */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margin */
+    border-radius: 5px;
+    background-color: #d2d6d9;
+}
+
+.span{
+    position: absolute;
+    left:10px;
+    top:20px;
+}
+
+.goodAnswer{
+    color: green;
+}
+
+.wrongAnswer{
+    color:red;
+}
+
+.font-bold {
+    color:red;
+  }
+
+#problem-name{
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+
+.left-component {
+  width: 300px;
+  height: 100vh;
+  background-color: whitesmoke;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 9999; /* Ensure the overlay appears on top of other elements */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure the overlay appears on top of other elements */
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.styled-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+}
+
+.styled-table tr:nth-child(even) {
+  background-color: #e2e2e2;
+}
+
+.styled-table tr:hover {
+  background-color: #d0d0d0;
+  transition: background-color 0.3s ease;
+}
+
+
+code[contenteditable="true"] {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 95%;
+  display: block;
+  height: 45vh;
+  overflow-y: scroll;
+  overflow: auto;
+  white-space: pre-wrap; /* Preserve spaces and line breaks */
+}
+
+
+
+
+
